@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Employee Management</title>
+    <!--Link to reset css template -->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <!--====== BOOTSTRAP ===== -->
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+
+    <!--====== FONTS ===== -->
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Font Awesome link which enable fonts and icons.  -->
+    <script src="https://use.fontawesome.com/9763ef17ba.js"></script>
+    <!--====== YOUR STYLE SHEET ===== -->
+    <!-- Your style sheet link -->
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+
+
+</head>
+
+<body>
+    <style>
+    th {
+        text-align: center;
+    }
+
+    body { 
+        background-image: url(http://www.planwallpaper.com/static/images/beautiful-sunset-images-196063.jpg) no-repeat cover cover; 
+     }
+    </style>
+    <!--====== HTML CONTENT ===== -->
+    <div class="container-fluid">
+        <div class="jumbotron text-center">
+            <h1>Employee Stuff </h1>
+            <h2> Directory of Ours </h2>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Current Employees</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-hover" id='employeeTable'>
+                            <thead>
+                                <tr>
+                                    <th>Employee Name</th>
+                                    <th>Role</th>
+                                    <th>Start Date</th>
+                                    <th>Months Worked</th>
+                                    <th>Monthly Rate $</th>
+                                    <th>Total Billed $</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody">
+                                <!-- Dynamically generated -->
+                              <!--   <tr>
+                                    <td> Sir </td>
+                                    <td> BA </td>
+                                    <td> 01/01/2016 </td>
+                                    <td> Infinity </td>
+                                    <td> $$$$$$$$ </td>
+                                    <td> $$$$$$$$ </td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+    <!-- EMPLOYEE ADDING PLACE -->
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><strong>Add Employee</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <!-- Employee Name -->
+                        <label for="employeeName">Employee Name</label>
+                        <input class="form-control" type="text" id="employeeName">
+
+                        <!-- Role -->
+                        <label for="role">Role</label>
+                        <input class="form-control" type="text" id="role">
+                        
+
+                        <label for="startdate">Start Date</label>
+                        <input class="form-control" type="text" id="datepicker">
+
+
+                        <label for="monthlyRate">Monthly Rate</label>
+                        <input class="form-control" type="number" id="monthlyRate">
+
+                        <submit class="btn btn-primary" id="button">Submit</submit>
+                        
+                        
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!--====== BOOTSTRAP ===== -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+    </script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- ===== MOMENT JS library ======= -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/locale/af.js"></script> -->
+    <script type="text/javascript" src="http://momentjs.com/downloads/moment.js"></script>
+
+    <!--====== UNDERSCORE===== -->
+    <!-- underscore JS library CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <!--====== YOUR LOCAL JS FILE ===== -->
+    <!-- link to user JS file. Name will change -->
+    <script type="text/javascript" src="timesheetTeam.js"></script>
+   
+
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+  <script>
+  $(document).ready(function() {
+   
+        $("#datepicker").datepicker();
+
+  });
+  
+  </script>
+</body>
+
+</html>
