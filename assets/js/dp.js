@@ -8,7 +8,7 @@ var masterPackageArray = ["dp1", "dp2", "dp3", "dp4"];
 var stuff = "";
 masterPackageArray.forEach(function(dickPick) {
 
-	// Establish ownership
+	// Establish private ownership
 	var myPeePee = dickPick;
 
 	// Build html string to throw into its proper package
